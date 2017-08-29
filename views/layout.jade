@@ -125,6 +125,11 @@ html
                 a.navbar-link(href='/info')
                   span.glyphicon.glyphicon-info-sign
                   span.menu-text #{settings.locale.menu_api}
+			if settings.display.website == true
+              li#website
+                  a.navbar-link(href="{settings.website}", target='_blank')
+				  span.glyphicon.glyphicons-group-chat
+                  span.menu-text #{settings.locale.menu_website}
     .col-md-12
       .row.text-center
         .col-md-2.col-md-offset-1
