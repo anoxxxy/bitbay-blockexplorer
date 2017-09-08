@@ -8,7 +8,6 @@
     "menu_explorer": "Explorer",
     "menu_api": "API",
     "menu_markets": "Markets",
-    "menu_markets": "Website",
     "menu_richlist": "Top 100",
     "menu_reward": "Reward",
     "menu_movement": "Movement",
@@ -32,7 +31,10 @@
     "tx_block_hash": "Block Hash",
     "tx_recipients": "Recipients",
     "tx_contributors": "Input Addresses",
+	"tx_inputs": "Inputs",
+    "tx_outputs": "Outputs",
     "tx_hash": "Hash",
+    "tx_block": "Block",
     "tx_address": "Address",
     "tx_nonstandard": "NONSTANDARD TX",
 
