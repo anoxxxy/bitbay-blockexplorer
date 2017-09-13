@@ -5,7 +5,7 @@ An open source block explorer written in node.js.
 
 ### See it in action
 
-*  [Bitbay](http://195.181.242.206:3001/)
+*  [Bitbay](http://195.181.242.206:)
 
 *note: If you would like your instance mentioned here contact me*
 
