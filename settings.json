@@ -6,9 +6,9 @@
 {
   // name your instance!
   "title": "Bitbay",
-  //"subtitle": "Blockexplorer",
+
   //"address": "127.0.0.1:3001",
-  "address": "195.181.242.206:3001",
+  "address": "195.181.242",
 
   // coin name
   "coin": "Bitbay",
@@ -25,17 +25,17 @@
   // Uses bootswatch themes (http://bootswatch.com/)
   // Valid options:
   //     Cerulean, Cosmo, Cyborg, Darkly, Flatly, Journal, Lumen, Paper,
-  //     Readable, Sandstone, Simplex, Slate, Spacelab, Superhero, United, Yeti
+  //     Readable, Solar, Sandstone, Simplex, Slate, Spacelab, Superhero, United, Yeti
   // theme (see /public/themes for available themes)
   "theme": "Cerulean",
 
   // port to listen for requests on.
-  "port" : 3001,
+  "port" : 80,
 
   // database settings (MongoDB)
   "dbsettings": {
-    "user": "iquidus",
-    "password": "3xp!0reR",
+    "user": "iquidusb4y",
+    "password": "3xp!0reRB4Y",
     "database": "explorerdb",
     "address": "localhost",
     "port": 27017
@@ -75,14 +75,14 @@
 
   // index page (valid options for difficulty are POW, POS or Hybrid)
   "index": {
-    "show_hashrate": false,
+    "show_hashrate": true,
     "difficulty": "POS",
     "last_txs": 100
   },
 
-  // ensure links on API page are valid, API get examples
+  // ensure links on API page are valid
   "api": {
-    "blockindex": 1173532,
+    "blockindex": 1337,
     "blockhash": "8e94e51576a498e88525fde32832564035dae425b856bc680f054fe41ffdf3cb",
     "txhash": "aebfa9e32fe4d2eb3590ea0afd6a8feaa5dcdf01d88c4be50b152ab3c07ea01a",
     "address": "bHXLTu1HmR4uctK3kSEZWzc8REdk6shCnv"
@@ -111,9 +111,9 @@
   // low flag: greater than this value flagged yellow
   // high flag: greater than this value flagged red
   "movement": {
-    "min_amount": 100,
-    "low_flag": 1000,
-    "high_flag": 5000
+    "min_amount": 1000,
+    "low_flag": 10000,
+    "high_flag": 50000
   },
 
   // twitter, facebook, googleplus
@@ -122,8 +122,9 @@
   "facebook": "yourfacebookpage",
   "googleplus": "yourgooglepluspage",
 
+  //genesis
   //genesis tx https://github.com/dzimbeck/BitBay/blob/master/src/chainparams.cpp#L106
-  "genesis_tx": "02b4345a1b1f0df76ab0cadfa1b44ca52270ff551c43e1b229d25873f0adc90d",
+  "genesis_tx": "d2b4345a1b1f0df76ab0cadfa1b44ca52270ff551c43e1b229d25873f0adc90d",
   // genesis block https://github.com/dzimbeck/BitBay/blob/master/src/chainparams.cpp#L105
   "genesis_block": "0000075685d3be1f253ce777174b1594354e79954d2a32a6f77fe9cba00e6467",
 
@@ -131,7 +132,7 @@
   "heavy": false,
 
   //amount of txs to index per address (stores latest n txs)
-  "txcount": 100,
+  "txcount": 200,
 
   //show total sent & received on address page (set false if PoS)
   "show_sent_received": true,
@@ -162,12 +163,4 @@
   //  "JSoEdU717hvz8KQVq2HfcqV9A79Wihzusu": {"label": "Developers address", "type":"primary", "url":"http://example.com"},
   //  "JSWVXHWeYNknPdG9uDrcBoZHztKMFCsndw": {"label": "Cryptsy"}
   }
-
-  // Custom Settings
-  /*
-  "settings_custom": {
-    "subtitle": "Blockexplorer",
-    "website": "bitbay.market"
-  }
-  */
 }
