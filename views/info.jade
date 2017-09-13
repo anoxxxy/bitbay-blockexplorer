@@ -126,5 +126,20 @@ block content
           *  **qrcode (/qr/hash)**  
              [#{address}/qr/#{hashes.address}](/qr/#{hashes.address})
 
+          ------
+
+          ### ElectrumX API calls
+          *Return data from ElectrumX server, use method and params*
+          *Method and Params parameters can be found at <br /><a href="https://github.com/kyuupichan/electrumx/blob/master/docs/PROTOCOL.rst">https://github.com/kyuupichan/electrumx/blob/master/docs/PROTOCOL.rst</a>*
+
+          *  **method=blockchain.address.get_balance&amp;params=address**  
+               *Returns current balance of given address*  
+               <a href="http://195.181.242.206:9998/api?method=blockchain.address.get_balance&params=bHXLTu1HmR4uctK3kSEZWzc8REdk6shCnv">http://195.181.242.206:9998/?api&method=blockchain.address.get\_balance&params=bHXLTu1HmR4uctK3kSEZWzc8REdk6shCnv</a>
+
+          *  **method=blockchain.address.listunspent&amp;params=address**  
+               *Returns unspent outputs of given address*  
+               <a href="http://195.181.242.206:9998/api?method=blockchain.address.listunspent&params=bHXLTu1HmR4uctK3kSEZWzc8REdk6shCnv">http://195.181.242.206:9998/?api&method=blockchain.address.listunspent&params=bHXLTu1HmR4uctK3kSEZWzc8REdk6shCnv</a>
+
+
     .footer-padding
 

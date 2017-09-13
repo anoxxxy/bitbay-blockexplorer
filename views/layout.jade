@@ -1,8 +1,9 @@
 doctype html
 html
   head
-    title= settings.title
-    link(rel='stylesheet', href='/themes/#{settings.theme}/bootstrap.min.css')
+    title= settings.title 
+    link(rel='stylesheet', href='/themes/#{settings.theme}/bootstrap.min.css' id='theme_settings')
+    link(rel='stylesheet', href='/themes/custom.css')
     link(rel='stylesheet', href='/vendor/jqplot/jquery.jqplot.css')
     link(rel='stylesheet', href='//cdn.datatables.net/plug-ins/725b2a2115b/integration/bootstrap/3/dataTables.bootstrap.css')
     link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
@@ -21,6 +22,7 @@ html
     script(src='//cdn.datatables.net/responsive/1.0.1/js/dataTables.responsive.js')
     script(src='//cdn.datatables.net/plug-ins/725b2a2115b/integration/bootstrap/3/dataTables.bootstrap.js')
     script(src='/javascripts/chart.js')
+    script(src='/javascripts/custom.js')
     script.
       $(document).ready(function(){
         $('##{active}').addClass('active');
@@ -125,36 +127,51 @@ html
                 a.navbar-link(href='/info')
                   span.glyphicon.glyphicon-info-sign
                   span.menu-text #{settings.locale.menu_api}
-			if settings.display.website == true
-              li#website
-                  a.navbar-link(href="{settings.website}", target='_blank')
-				  span.glyphicon.glyphicons-group-chat
-                  span.menu-text #{settings.locale.menu_website}
+            li.dropdown
+              a#themes.dropdown-toggle(data-toggle='dropdown', href='#', aria-expanded='false')
+                | Themes 
+                span.caret
+                ul.dropdown-menu(aria-labelledby='themes')
+                  li
+                    a(href='?theme=Default/') Default
+                  li.divider
+                  li
+                    a(href='?theme=Cerulean/') Cerulean
+                  li
+                    a(href='?theme=Cosmo/') Cosmo
+                  li
+                    a(href='?theme=Cyborg/') Cyborg
+                  li
+                    a(href='?theme=Darkly/') Darkly
+                  li
+                    a(href='?theme=Flatly/') Flatly
+                  li
+                    a(href='?theme=Journal/') Journal
+                  li
+                    a(href='?theme=Lumen/') Lumen
+                  li
+                    a(href='?theme=Paper/') Paper
+                  li
+                    a(href='?theme=Readable/') Readable
+                  li
+                    a(href='?theme=Sandstone/') Sandstone
+                  li
+                    a(href='?theme=Simplex/') Simplex
+                  li
+                    a(href='?theme=Slate/') Slate
+                  li
+                    a(href='?theme=Solar/') Solar
+                  li
+                    a(href='?theme=Spacelab/') Spacelab
+                  li
+                    a(href='?theme=Superhero/') Superhero
+                  li
+                    a(href='?theme=United/') United
+                  li
+                    a(href='?theme=Yeti/') Yeti
     .col-md-12
       .row.text-center
         .col-md-2.col-md-offset-1
-          .panel.panel-default.hidden-sm.hidden-xs
-            .panel-heading
-              if settings.nethash_units == 'K'
-                strong #{settings.locale.network} (KH/s)
-              else if settings.nethash_units == 'M'
-                strong #{settings.locale.network} (MH/s)
-              else if settings.nethash_units == 'G'
-                strong #{settings.locale.network} (GH/s)
-              else if settings.nethash_units == 'T'
-                strong #{settings.locale.network} (TH/s)
-              else if settings.nethash_units == 'P'
-                strong #{settings.locale.network} (PH/s)
-              else if settings.nethash_units == 'H'
-                strong #{settings.locale.network} (H/s)
-            .panel-body
-              if settings.index.difficulty == 'Hybrid'
-               label#hashrate - 
-               <br>
-               label#lblX1  
-              else  
-               label#hashrate - 
-        .col-md-2
           .panel.panel-default.hidden-sm.hidden-xs
             .panel-heading
               strong #{settings.locale.difficulty}
@@ -173,11 +190,11 @@ html
               strong #{settings.locale.ex_supply} (#{settings.symbol})
             .panel-body
               if settings.index.difficulty == 'Hybrid'
-               label#supply - 
+               label#supply.format_numbers - 
                <br>
                label#lblX1
               else
-               label#supply -  
+               label#supply.format_numbers -  
         .col-md-2
           .panel.panel-default.hidden-sm.hidden-xs
             .panel-heading
@@ -215,9 +232,11 @@ html
                 span.glyphicon.fa.fa-google-plus
       .col-md-4
         ul.nav
-          li.text-center(style='margin-left:80px;margin-right:80px;')
+          li.text-center(style='')
             p(style='margin-top:15px;') 
-              a.navbar-link(href='https://github.com/iquidus/explorer', target='_blank') Powered by Iquidus Explorer 
+              a.navbar-link(href='https://github.com/anoxxxy/bitbay-blockexplorer', target='_blank') Bitbay Blockexplorer
+              span &nbsp;&nbsp;
+              a.navbar-link(href='http://bitbay.market', target='_blank') Bitbay Website
       span.connections
         label#lblBlockcount.label.label-default -
         label#lblConnections.label.label-default -

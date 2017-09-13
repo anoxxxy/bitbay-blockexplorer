@@ -22,7 +22,7 @@ block content
               if settings.labels[address.a_id].url
                 a(href='#{settings.labels[address.a_id].url}', target='_blank')
                   span.fa.fa-question-circle(style='margin-left:5px;')
-      table.table.table-bordered.table-striped.summary-table 
+      table.table.table-bordered.table-striped.summary-table
         thead
           tr
             if settings.show_sent_received == true
@@ -34,11 +34,11 @@ block content
         tbody             
           tr
             if settings.show_sent_received == true 
-              td #{sent.toFixed(8)}
+              td.total_sent.format_numbers #{sent.toFixed(8)}
             if address.a_id !== 'coinbase'
               if settings.show_sent_received == true
-                td #{received.toFixed(8)}
-              td #{balance.toFixed(8)}
+                td.total_received.format_numbers #{received.toFixed(8)}
+              td.balance.format_numbers #{balance.toFixed(8)}
     .panel.panel-default.hidden-xs
       .panel-heading
         strong #{settings.locale.ex_latest_transactions}
