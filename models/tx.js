@@ -8,7 +8,7 @@ var TxSchema = new Schema({
   total: { type: Number, default: 0 },
   timestamp: { type: Number, default: 0 },
   blockhash: { type: String },
-  blockindex: {type: Number, default: 0},
+  blockindex: {type: Number, default: 0, index: true},
 }, {id: false});
 
 module.exports = mongoose.model('Tx', TxSchema);
